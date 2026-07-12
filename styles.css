@@ -626,6 +626,7 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
 }
 .photo-break--wide img {
   --h: clamp(360px, 56vw, 960px);
+  --fit: cover;
   object-position: var(--focus, 50% 55%);
 }
 
@@ -859,8 +860,18 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
     color: var(--ink);
   }
 
-  /* Hero: una sola foto en móvil para no tapar las caras */
+  /* Hero móvil: foto arriba sin texto encima, copy abajo sobre fondo claro */
+  .hero.hero--split {
+    display: block;
+    min-height: 0;
+    overflow: visible;
+    background: var(--cream);
+  }
   .hero--split .hero-media {
+    position: relative;
+    inset: auto;
+    height: min(58vh, 480px);
+    min-height: 260px;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
@@ -869,32 +880,51 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   }
   .hero--split .hero-media__half--left {
     background-size: cover;
-    background-position: 50% 28%;
+    background-position: 50% 20%;
   }
   .hero--split .hero-overlay {
-    background: linear-gradient(180deg,
-      rgba(10, 7, 4, 0.18) 0%,
-      rgba(10, 7, 4, 0.32) 50%,
-      rgba(10, 7, 4, 0.52) 100%);
+    display: none;
+  }
+  .hero--split .hero-content {
+    position: static;
+    z-index: auto;
+    width: 100%;
+    padding: 1.75rem 1.25rem 2.25rem;
+    background: var(--cream);
+    color: var(--ink);
+  }
+  .hero--split .hero-meta {
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+  }
+  .hero--split .eyebrow {
+    color: var(--ink-soft);
+    letter-spacing: 0.22em;
+  }
+  .hero--split h1 {
+    color: var(--ink);
+    margin-top: 0.4rem;
+  }
+  .hero--split h1 .amp {
+    color: var(--ink-soft);
+  }
+  .hero--split .hero-subtitle {
+    color: var(--ink-mid);
+    margin-top: 1rem;
+  }
+  .hero--split .hero-cta {
+    margin-top: 1.4rem;
+    color: var(--white);
+    background: var(--ink);
+    border: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    backdrop-filter: none;
+  }
+  .hero--split .hero-scroll {
+    display: none;
   }
   .hero h1 { font-size: clamp(3rem, 15vw, 5rem); }
-  .hero-content {
-    padding: calc(4.8rem + env(safe-area-inset-top, 0px)) 1.25rem 2rem;
-  }
-  .hero-meta { padding: 0.55rem 1rem; }
-  .hero .eyebrow { font-size: 0.58rem; letter-spacing: 0.18em; }
-  .hero-subtitle {
-    letter-spacing: 0.22em;
-    margin-top: 1.2rem;
-  }
-  .hero-cta {
-    margin-top: 1.6rem;
-    padding: 0.65rem 1.2rem 0.7rem;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-  }
-  .hero-scroll { margin-top: 2.5rem; }
 
   /* Countdown */
   .countdown-strip { padding: 2.8rem 1.25rem; }
@@ -936,13 +966,21 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
     object-position: var(--focus, 50% 50%);
   }
 
-  /* Foto ancha (Denia): zoom out en móvil */
+  /* Foto ancha (Denia): entera en móvil, sin recorte */
+  .photo-break--wide {
+    overflow: visible;
+    padding: 0 0.5rem;
+  }
   .photo-break--wide img {
     --h: auto;
+    --fit: contain;
+    --zoom: 1;
     height: auto;
+    max-height: none;
+    width: 100%;
     object-fit: contain;
+    object-position: center;
     transform: none;
-    background: var(--cream);
   }
 
   /* Buttons full-width on small screens */
@@ -1018,23 +1056,28 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   .gifts-iban { font-size: 0.82rem; letter-spacing: 0.04em; }
 }
 
-/* Landscape phones: both hero photos side by side with softer crop */
+/* Landscape phones: foto + texto apilados pero más compactos */
 @media (max-width: 760px) and (orientation: landscape) {
   .hero--split .hero-media {
+    height: min(72vh, 100%);
+    min-height: 0;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
   }
   .hero--split .hero-media__half--right {
     display: block;
     background-size: cover;
-    background-position: 50% 55%;
+    background-position: 50% 45%;
   }
   .hero--split .hero-media__half--left {
-    background-position: 50% 30%;
+    background-position: 50% 22%;
   }
-  .hero-content { padding-top: calc(3.5rem + env(safe-area-inset-top, 0px)); }
-  .hero h1 { font-size: clamp(2.4rem, 10vh, 3.8rem); }
-  .hero-scroll { display: none; }
+  .hero--split .hero-content {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+  .hero--split h1 {
+    font-size: clamp(2.2rem, 8vh, 3.2rem);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

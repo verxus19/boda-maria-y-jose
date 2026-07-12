@@ -33,7 +33,7 @@ if (!reducedMotion) {
 
 // ── SCROLL ────────────────────────────────────────────────────
 const progressLine = document.getElementById("progressLine");
-const siteHeader   = document.getElementById("siteHeader");
+const siteTop      = document.getElementById("siteTop");
 
 function onScroll() {
   if (progressLine) {
@@ -41,8 +41,8 @@ function onScroll() {
     const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
     progressLine.style.width = docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) + "%" : "0%";
   }
-  if (siteHeader) {
-    siteHeader.classList.toggle("scrolled", window.scrollY > 60);
+  if (siteTop) {
+    siteTop.classList.toggle("scrolled", window.scrollY > 60);
   }
 }
 

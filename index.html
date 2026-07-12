@@ -17,6 +17,7 @@
 
     <div class="progress-line" id="progressLine" aria-hidden="true"></div>
 
+    <div class="site-top" id="siteTop">
     <header class="site-header" id="siteHeader">
       <button
         class="nav-toggle"
@@ -30,18 +31,6 @@
         <span class="nav-toggle__bar" aria-hidden="true"></span>
         <span class="nav-toggle__bar" aria-hidden="true"></span>
       </button>
-      <nav class="page-nav" id="pageNav" aria-label="Secciones principales">
-        <a class="page-nav__link" href="#inicio" data-i18n="nav_inicio">Inicio</a>
-        <a class="page-nav__link" href="#itinerario" data-i18n="nav_plan">Itinerario</a>
-        <a class="page-nav__link" href="#preboda" data-i18n="nav_preboda">Preboda</a>
-        <a class="page-nav__link" href="#dresscode" data-i18n="nav_dresscode">Etiqueta</a>
-        <a class="page-nav__link" href="#asistencia" data-i18n="nav_asistencia">Asistencia</a>
-        <a class="page-nav__link" href="#fotos" data-i18n="nav_fotos">Fotos</a>
-        <a class="page-nav__link" href="#regalos" data-i18n="nav_regalos">Regalos</a>
-        <a class="page-nav__link" href="#faq" data-i18n="nav_faq">Preguntas</a>
-        <a class="page-nav__link" href="#sevilla" data-i18n="nav_sevilla">Qué visitar</a>
-        <a class="page-nav__link" href="#donde-comer" data-i18n="nav_comer">Dónde comer</a>
-      </nav>
       <div class="header-actions">
         <button
           class="music-toggle"
@@ -61,6 +50,20 @@
         </div>
       </div>
     </header>
+
+    <nav class="page-nav" id="pageNav" aria-label="Secciones principales">
+      <a class="page-nav__link" href="#inicio" data-i18n="nav_inicio">Inicio</a>
+      <a class="page-nav__link" href="#itinerario" data-i18n="nav_plan">Itinerario</a>
+      <a class="page-nav__link" href="#preboda" data-i18n="nav_preboda">Preboda</a>
+      <a class="page-nav__link" href="#dresscode" data-i18n="nav_dresscode">Etiqueta</a>
+      <a class="page-nav__link" href="#asistencia" data-i18n="nav_asistencia">Asistencia</a>
+      <a class="page-nav__link" href="#fotos" data-i18n="nav_fotos">Fotos</a>
+      <a class="page-nav__link" href="#regalos" data-i18n="nav_regalos">Regalos</a>
+      <a class="page-nav__link" href="#faq" data-i18n="nav_faq">Preguntas</a>
+      <a class="page-nav__link" href="#sevilla" data-i18n="nav_sevilla">Qué visitar</a>
+      <a class="page-nav__link" href="#donde-comer" data-i18n="nav_comer">Dónde comer</a>
+    </nav>
+    </div>
 
     <audio id="bgMusic" loop preload="auto" autoplay playsinline aria-label="La mujer de verde, de Izal">
       <source src="assets/audio/la-mujer-de-verde.mp3" type="audio/mpeg" />
@@ -217,12 +220,11 @@
       </section>
 
       <!-- FOTO -->
-      <div class="photo-break reveal">
+      <div class="photo-break photo-break--wide reveal">
         <img
           src="assets/photos/salto-denia.jpeg"
           alt="María y José"
-          style="--focus: 60% 60%; --zoom: 1; 
-          --h: clamp(360px, 56vw, 960px); --fit: cover;"
+          style="--focus: 50% 55%; --zoom: 1; --fit: cover;"
         />
       </div>
 

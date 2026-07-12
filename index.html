@@ -1,0 +1,648 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>María &amp; José | 24 Octubre 2026</title>
+    <meta name="description" content="Invitación digital de boda. Sevilla, 24 de octubre de 2026." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <div class="progress-line" id="progressLine" aria-hidden="true"></div>
+
+    <header class="site-header" id="siteHeader">
+      <nav class="page-nav" aria-label="Secciones principales">
+        <a class="page-nav__link" href="#inicio" data-i18n="nav_inicio">Inicio</a>
+        <a class="page-nav__link" href="#itinerario" data-i18n="nav_plan">Itinerario</a>
+        <a class="page-nav__link" href="#preboda" data-i18n="nav_preboda">Preboda</a>
+        <a class="page-nav__link" href="#dresscode" data-i18n="nav_dresscode">Etiqueta</a>
+        <a class="page-nav__link" href="#asistencia" data-i18n="nav_asistencia">Asistencia</a>
+        <a class="page-nav__link" href="#fotos" data-i18n="nav_fotos">Fotos</a>
+        <a class="page-nav__link" href="#regalos" data-i18n="nav_regalos">Regalos</a>
+        <a class="page-nav__link" href="#faq" data-i18n="nav_faq">Preguntas</a>
+        <a class="page-nav__link" href="#sevilla" data-i18n="nav_sevilla">Qué visitar</a>
+        <a class="page-nav__link" href="#donde-comer" data-i18n="nav_comer">Dónde comer</a>
+      </nav>
+      <div class="header-actions">
+        <button
+          class="music-toggle"
+          id="musicToggle"
+          type="button"
+          aria-pressed="false"
+          aria-label="Reproducir La mujer de verde, de Izal"
+          title="La mujer de verde · Izal"
+        >
+          <span class="music-toggle__icon music-toggle__icon--play" aria-hidden="true">♪</span>
+          <span class="music-toggle__icon music-toggle__icon--pause" aria-hidden="true">❚❚</span>
+        </button>
+        <div class="lang-switch" id="langToggle" data-lang="es" role="group" aria-label="Selector de idioma">
+          <span class="lang-slider" aria-hidden="true"></span>
+          <button class="lang-opt" data-lang="es" aria-pressed="true"><img src="https://flagcdn.com/es.svg" alt="Español" width="22" height="16"></button>
+          <button class="lang-opt" data-lang="en" aria-pressed="false"><img src="https://flagcdn.com/gb.svg" alt="English" width="22" height="16"></button>
+        </div>
+      </div>
+    </header>
+
+    <audio id="bgMusic" loop preload="auto" autoplay playsinline aria-label="La mujer de verde, de Izal">
+      <source src="assets/audio/la-mujer-de-verde.mp3" type="audio/mpeg" />
+    </audio>
+
+    <main>
+
+      <!-- HERO -->
+      <section id="inicio" class="hero hero--split reveal" aria-label="Portada">
+        <div class="hero-media" aria-hidden="true">
+          <div class="hero-media__half hero-media__half--left"></div>
+          <div class="hero-media__half hero-media__half--right"></div>
+        </div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="hero-meta">
+            <p class="eyebrow" data-i18n="hero_eyebrow">SEVILLA &middot; 24 DE OCTUBRE DE 2026</p>
+          </div>
+          <h1>
+            María
+            <span class="amp">&amp;</span>
+            José
+          </h1>
+          <p class="hero-subtitle" data-i18n="hero_subtitle">¡Nos casamos!</p>
+          <a class="hero-cta" href="#asistencia" data-i18n="hero_cta_primary">Confirmar asistencia</a>
+          <div class="hero-scroll" aria-hidden="true">
+            <span data-i18n="scroll_down">Descubrir</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CUENTA ATRAS -->
+      <div class="countdown-strip reveal" aria-label="Cuenta atrás de la boda">
+        <span class="strip-label" data-i18n="countdown_title">Cuenta atrás</span>
+        <div class="countdown" aria-live="polite">
+          <div class="countdown-item">
+            <span id="days">--</span>
+            <small data-i18n="countdown_days">días</small>
+          </div>
+          <div class="countdown-item">
+            <span id="hours">--</span>
+            <small data-i18n="countdown_hours">horas</small>
+          </div>
+          <div class="countdown-item">
+            <span id="minutes">--</span>
+            <small data-i18n="countdown_minutes">min</small>
+          </div>
+          <div class="countdown-item">
+            <span id="seconds">--</span>
+            <small data-i18n="countdown_seconds">seg</small>
+          </div>
+        </div>
+        <p class="countdown-note" data-i18n="countdown_note">Iglesia del Salvador &middot; 17:30h</p>
+      </div>
+
+      <!-- FOTO -->
+      <div class="photo-break reveal">
+        <img
+          src="assets/photos/foxos-cerveza.jpeg"
+          alt="María y José"
+          style="--focus: 50% 50%; --zoom: 1; --h: auto; --fit: contain;"
+        />
+      </div>
+
+      <!-- NOSOTROS -->
+      <section id="nosotros" class="content-section reveal" aria-labelledby="h-nosotros">
+        <div class="divider" aria-hidden="true"></div>
+        <span class="eyebrow" data-i18n="about_eyebrow">Nuestra historia</span>
+        <h2 id="h-nosotros" data-i18n="about_title">Una historia de planes improvisados y mucha ilusión</h2>
+        <div class="prose">
+          <p data-i18n="about_p1">Somos María y José. Empezamos con un café eterno, seguimos con mil aventuras y ahora celebramos el plan más bonito: nuestro sí, quiero.</p>
+          <p data-i18n="about_p2">Nos hace muchísima ilusión vivir este día contigo y compartir una noche llena de abrazos, brindis y música.</p>
+        </div>
+      </section>
+
+      <!-- FOTO -->
+      <div class="photo-break reveal">
+        <img
+          src="assets/photos/vasco.jpeg"
+          alt="María y José"
+          style="--focus: 50% 50%; --zoom: 1; --h: clamp(260px, 48vw, 560px); --fit: cover;"
+        />
+      </div>
+
+      <!-- PLAN DEL DIA (itinerario + ubicaciones) -->
+      <section id="itinerario" class="section-alt reveal" aria-labelledby="h-itinerario">
+        <div class="content-section content-section--plan">
+          <div class="divider" aria-hidden="true"></div>
+          <span class="eyebrow" data-i18n="timeline_eyebrow">Plan del día</span>
+          <h2 id="h-itinerario" data-i18n="timeline_title">Dónde y cuándo nos vemos</h2>
+
+          <div class="plan-layout" aria-label="Itinerario del 24 de octubre de 2026">
+            <div class="plan-row">
+              <ol class="timeline">
+                <li class="timeline-item">
+                  <time datetime="17:30">17:30h</time>
+                  <article>
+                    <h3 data-i18n="plan_ceremony_title">Ceremonia</h3>
+                    <p class="timeline-place">Iglesia del Salvador &middot; <span data-i18n="plan_ceremony_area">Centro histórico de Sevilla</span></p>
+                    <a class="cta-link" href="https://maps.google.com/?q=Iglesia+del+Salvador+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+                  </article>
+                </li>
+                <li class="timeline-item">
+                  <time datetime="19:30">19:30h</time>
+                  <article>
+                    <h3 data-i18n="plan_bus_out_title">Salida de autobuses</h3>
+                    <p class="timeline-place">Plaza Padre Jer&oacute;nimo de C&oacute;rdoba &middot; <span data-i18n="plan_bus_out_area">Punto de encuentro para el traslado</span></p>
+                    <a class="cta-link" href="https://maps.google.com/?q=Plaza+Padre+Jer%C3%B3nimo+de+C%C3%B3rdoba+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+                  </article>
+                </li>
+              </ol>
+              <div class="plan-photo">
+                <img
+                  src="assets/photos/salvador.png"
+                  alt="Iglesia del Salvador, Sevilla"
+                />
+              </div>
+            </div>
+
+            <div class="plan-row">
+              <ol class="timeline">
+                <li class="timeline-item">
+                  <time datetime="20:00">20:00h</time>
+                  <article>
+                    <h3 data-i18n="plan_party_title">Cóctel, cena y fiesta</h3>
+                    <p class="timeline-place">Cortijo El Esparragal &middot; <span data-i18n="plan_party_area">Gerena, Sevilla</span></p>
+                    <a class="cta-link" href="https://maps.google.com/?q=Cortijo+El+Esparragal+Gerena" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+                  </article>
+                </li>
+                <li class="timeline-item">
+                  <time datetime="02:00">02:00h</time>
+                  <article>
+                    <h3 data-i18n="plan_bus_back1_title">Primera vuelta de autobuses</h3>
+                    <p class="timeline-place" data-i18n="plan_bus_back_area">Hasta Plaza Padre Jer&oacute;nimo de C&oacute;rdoba</p>
+                  </article>
+                </li>
+                <li class="timeline-item">
+                  <time datetime="06:00">06:00h</time>
+                  <article>
+                    <h3 data-i18n="plan_bus_back2_title">Última vuelta de autobuses</h3>
+                    <p class="timeline-place" data-i18n="plan_bus_back_area">Hasta Plaza Padre Jer&oacute;nimo de C&oacute;rdoba</p>
+                  </article>
+                </li>
+              </ol>
+              <div class="plan-photo">
+                <img
+                  src="assets/photos/cortijo.png"
+                  alt="Cortijo El Esparragal, Gerena"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOTO -->
+      <div class="photo-break reveal">
+        <img
+          src="assets/photos/salto-denia.jpeg"
+          alt="María y José"
+          style="--focus: 60% 60%; --zoom: 1; 
+          --h: clamp(360px, 56vw, 960px); --fit: cover;"
+        />
+      </div>
+
+      <!-- PREBODA (foto izquierda) -->
+      <section id="preboda" class="content-section split reveal" aria-labelledby="h-preboda">
+        <div class="split-inner">
+          <div class="split-media">
+            <img
+              src="assets/photos/mallorca.jpeg"
+              alt="María y José"
+              style="--focus: 50% 50%; --zoom: 1; --ar: 3 / 4; --fit: cover;"
+            />
+          </div>
+          <div class="split-body">
+            <div class="divider" aria-hidden="true"></div>
+            <span class="eyebrow" data-i18n="preboda_eyebrow">Preboda</span>
+            <h2 id="h-preboda" data-i18n="preboda_title">Cena la víspera</h2>
+            <div class="prose">
+              <p data-i18n="preboda_intro" data-i18n-html>El viernes 23 de octubre, quien quiera puede acercarse al bar La Bacalona para tomar algo. Nada formal: unas cervecitas (sin pasarse, que hay que reservarse para la boda jejeje) y buena compañía.<br><br>No olvides confirmarlo en el formulario de asistencia.</p>
+            </div>
+            <ol class="timeline" aria-label="Preboda 23 de octubre de 2026">
+              <li class="timeline-item">
+                <time datetime="20:00">20:00</time>
+                <article>
+                  <h3 data-i18n="preboda_event_title">Cena</h3>
+                  <p class="timeline-place"><span data-i18n="preboda_event_place">Centro de Sevilla &middot; La Bacalona</span></p>
+                  <a class="cta-link" href="https://maps.google.com/?q=La+Bacalona+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+                </article>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- DRESS CODE (foto derecha) -->
+      <section id="dresscode" class="section-alt reveal" aria-labelledby="h-dresscode">
+        <div class="content-section split split--reverse">
+          <div class="split-inner">
+            <div class="split-media">
+              <img
+                src="assets/photos/boda-gigi.jpeg"
+                alt="Ilustración María y José"
+                style="--focus: 50% 50%; --zoom: 1; --ar: 3 / 4; --fit: cover;"
+              />
+            </div>
+            <div class="split-body">
+              <div class="divider" aria-hidden="true"></div>
+              <span class="eyebrow" data-i18n="dress_eyebrow">Dress code</span>
+              <h2 id="h-dresscode" data-i18n="dress_title">Elegante, cómodo y con ganas de celebrar</h2>
+              <div class="prose">
+                <p data-i18n="dress_intro">Nos encantará veros guapísimos para una noche especial. Pensad en un look elegante de tarde-noche y en un calzado con el que podáis bailar.</p>
+              </div>
+              <ul class="pill-list">
+                <li data-i18n="dress_pill_1">Traje oscuro o esmoquin opcional.</li>
+                <li data-i18n="dress_pill_2">Vestido largo.</li>
+                <li data-i18n="dress_pill_3">Calzado cómodo para disfrutar de la pista.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RSVP (foto izquierda) -->
+      <section id="asistencia" class="content-section split reveal" aria-labelledby="h-rsvp">
+        <div class="split-inner">
+          <div class="split-media">
+            <img
+              src="assets/photos/arousa.jpeg"
+              alt="Ilustración María y José"
+              style="--focus: 0% 0%; --zoom: 1; --ar: 3 / 4; --fit: cover;"
+            />
+          </div>
+          <div class="split-body">
+            <div class="divider" aria-hidden="true"></div>
+            <span class="eyebrow" data-i18n="rsvp_eyebrow">Asistencia</span>
+            <h2 id="h-rsvp" data-i18n="rsvp_title">Confirma tu asistencia</h2>
+            <div class="prose">
+              <p data-i18n="rsvp_intro">Para organizarlo todo con mimo, completa el formulario de asistencia e indica alergias, intolerancias o cualquier detalle. Fecha límite: 31 de agosto de 2026.</p>
+            </div>
+            <div style="margin-top:2.2rem">
+              <a
+                class="button-pill filled"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdcgMRw7nBpNYe4uLlk9TMbn7umLwgUclIVbzDStd3N0VNcPg/viewform?usp=header"
+                target="_blank"
+                rel="noreferrer noopener"
+                data-i18n="rsvp_button"
+              >Abrir formulario de asistencia</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOTOS Y VIDEOS (foto derecha) -->
+      <section id="fotos" class="section-alt reveal" aria-labelledby="h-fotos">
+        <div class="content-section split split--reverse">
+          <div class="split-inner">
+            <div class="split-media">
+              <img
+                src="assets/photos/poyete.jpeg"
+                alt="Ilustración María y José"
+                style="--focus: 50% 90%; --zoom: 1.2; --ar: 3 / 4; --fit: cover;"
+              />
+            </div>
+            <div class="split-body">
+              <div class="divider" aria-hidden="true"></div>
+              <span class="eyebrow" data-i18n="photos_eyebrow">Fotos y vídeos</span>
+              <h2 id="h-fotos" data-i18n="photos_title">Sube tus recuerdos del día</h2>
+              <div class="prose">
+                <p data-i18n="photos_intro">Queremos revivir la boda desde todos los ángulos. Sube tus fotos y vídeos a nuestra carpeta compartida.</p>
+              </div>
+              <div style="margin-top:2.2rem">
+                <a
+                  class="button-pill"
+                  href="https://drive.google.com/drive/folders/1aqgMT__XDjyeYmkqt_BlgRaNzy0umIKf?usp=sharing"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  data-i18n="photos_button"
+                >Abrir álbum compartido</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REGALOS (foto izquierda) -->
+      <section id="regalos" class="content-section split reveal" aria-labelledby="h-regalos">
+        <div class="split-inner">
+          <div class="split-media">
+            <img
+              src="assets/photos/feria.jpeg"
+              alt="María y José"
+              style="--focus: 50% 40%; --zoom: 1; --ar: 5 / 6; --fit: cover;"
+            />
+          </div>
+          <div class="split-body">
+            <div class="divider" aria-hidden="true"></div>
+            <span class="eyebrow" data-i18n="gifts_eyebrow">Mesa de regalos</span>
+            <h2 id="h-regalos" data-i18n="gifts_title">Tu presencia es nuestro mejor regalo</h2>
+            <div class="prose">
+              <p data-i18n="gifts_intro">Si además quieres tener un detalle con nosotros, aquí añadiremos la información para aportación o lista.</p>
+            </div>
+            <p class="gifts-iban" data-i18n="gifts_button">ES67 0128 7820 8401 0408 1447</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ (foto derecha) -->
+      <section id="faq" class="section-alt reveal" aria-labelledby="h-faq">
+        <div class="content-section split split--reverse">
+          <div class="split-inner">
+            <div class="split-media">
+              <img
+                src="assets/photos/cies.jpeg"
+                alt="María y José"
+                style="--focus: 50% 10%; --zoom: 1.1; --ar: 3 / 4; --fit: cover;"
+              />
+            </div>
+            <div class="split-body">
+              <div class="divider" aria-hidden="true"></div>
+              <span class="eyebrow" data-i18n="faq_eyebrow">FAQ</span>
+              <h2 id="h-faq" data-i18n="faq_title">Preguntas frecuentes</h2>
+              <div class="faq-list">
+                <div class="faq-item">
+                  <h3 data-i18n="faq_q_bus">¿Hay autobús?</h3>
+                  <p data-i18n="faq_a_bus">Sí. Sale a las 19:30 desde Plaza Padre Jerónimo de Córdoba y vuelve a las 02:00 y 06:00 hasta la misma plaza.</p>
+                </div>
+                <div class="faq-item">
+                  <h3 data-i18n="faq_q_menu">¿Habrá menú adaptado?</h3>
+                  <p data-i18n="faq_a_menu">Por supuesto. Indica alergias o intolerancias en el formulario de asistencia.</p>
+                </div>
+                <div class="faq-item">
+                  <h3 data-i18n="faq_q_deadline">¿Cuándo es la fecha límite para confirmar asistencia?</h3>
+                  <p data-i18n="faq_a_deadline">El 31 de agosto de 2026. Así podremos organizarlo todo con tiempo.</p>
+                </div>
+                <div class="faq-item">
+                  <h3 data-i18n="faq_q_weather">¿Qué tiempo puede hacer en Sevilla en esas fechas?</h3>
+                  <p data-i18n="faq_a_weather">A finales de octubre en Sevilla suele hacer un tiempo agradable: días soleados con temperaturas de unos 22–26&nbsp;°C y noches más frescas, en torno a 14–18&nbsp;°C. Lleva algo de abrigo para la noche y calzado cómodo para pasear.</p>
+                </div>
+                <div class="faq-item">
+                  <h3 data-i18n="faq_q_outdoor">¿La boda es al aire libre?</h3>
+                  <p data-i18n="faq_a_outdoor">La ceremonia será en el interior. Si el tiempo lo permite, el cóctel y la cena serán en el exterior y la fiesta en el interior.</p>
+                </div>
+                <div class="faq-item">
+                  <h3 data-i18n="faq_q_parking">¿Dónde puedo aparcar?</h3>
+                  <p data-i18n="faq_a_parking">Cerca de la iglesia hay varios parkings de pago. En el cortijo se puede aparcar, aunque pondremos autobuses de ida y vuelta para que no tengáis que preocuparos del coche.</p>
+                </div>
+                <div class="faq-item">
+                  <h3 data-i18n="faq_q_shoes">¿Qué zapatos es más conveniente llevar?</h3>
+                  <p data-i18n="faq_a_shoes" data-i18n-html>No recomendamos llevar tacones de aguja, ya que hay varias zonas de albero y empedrado y puede no ser lo más cómodo, así que mejor optar por tacones un poco más anchos.<br><br>Aviso: no habrá zapatos de recambio, así que aseguraos de traer un calzado cómodo :)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIA final -->
+      <section id="galeria" class="reveal" aria-labelledby="h-galeria">
+        <div class="content-section" style="padding-bottom: clamp(2rem, 4vw, 3rem);">
+          <div class="divider" aria-hidden="true"></div>
+          <span class="eyebrow" data-i18n="gallery_eyebrow">Galería</span>
+          <h2 id="h-galeria" data-i18n="gallery_title">Un poco de nosotros</h2>
+        </div>
+        <div class="gallery-grid">
+          <img
+            src="assets/photos/nieve.jpeg"
+            alt="María y José"
+            style="--focus: 50% 50%; --zoom: 1; --ar: 3 / 4; --fit: cover;"
+          />
+          <img
+            src="assets/photos/combarro.jpeg"
+            alt="María y José"
+            style="--focus: 50% 50%; --zoom: 1; --ar: 3 / 4; --fit: cover;"
+          />
+          <img
+            src="assets/photos/victor2.JPG"
+            alt="María y José"
+            style="--focus: 50% 50%; --zoom: 1; --ar: 3 / 4; --fit: cover;"
+          />
+          <img
+            src="assets/photos/marsella.jpeg"
+            alt="María y José"
+            style="--focus: 50% 50%; --zoom: 1; --ar: 3 / 4; --fit: cover;"
+          />
+          <img
+            src="assets/photos/mijares.jpeg"
+            alt="María y José"
+            style="--focus: 50% 50%; --zoom: 1; --ar: 3 / 4; --fit: cover;"
+          />
+          <img
+            src="assets/photos/surf.jpeg"
+            alt="María y José"
+            style="--focus: 50% 50%; --zoom: 1; --ar: 3 / 4; --fit: cover;"
+          />
+          <img
+            src="assets/photos/adobo.jpeg"
+            alt="María y José"
+            style="--focus: 50% 50%; --zoom: 1; --ar: 3 / 4; --fit: cover;"
+          />
+          <img
+            src="assets/photos/rata.jpeg"
+            alt="María y José"
+            style="--focus: 50% 50%; --zoom: 1; --ar: 3 / 4; --fit: cover;"
+          />
+        </div>
+      </section>
+
+      <!-- QUE VER EN SEVILLA -->
+      <section id="sevilla" class="section-alt reveal" aria-labelledby="h-sevilla">
+        <div class="content-section" style="padding-bottom: 0;">
+          <div class="divider" aria-hidden="true"></div>
+          <span class="eyebrow" data-i18n="sevilla_eyebrow">Qué ver en Sevilla</span>
+          <h2 id="h-sevilla" data-i18n="sevilla_title">Aprovecha el viaje</h2>
+          <div class="prose">
+            <p data-i18n="sevilla_intro">Si te quedas unos días, aquí van algunos imprescindibles para exprimir la ciudad entre baile y baile.</p>
+          </div>
+        </div>
+
+        <ul class="place-list">
+          <li class="place-card">
+            <div class="place-media">
+              <img
+                src="assets/photos/giralda.jpg"
+                alt="La Catedral y la Giralda de Sevilla"
+                style="--focus: 50% 50%; --zoom: 1; --ar: 4 / 3; --fit: cover;"
+              />
+            </div>
+            <div class="place-body">
+              <span class="place-index">01</span>
+              <h3 data-i18n="visit_1_title">La Catedral y la Giralda</h3>
+              <p data-i18n="visit_1_desc">El templo gótico más grande del mundo, con su antiguo minarete almohade reconvertido en campanario. Sube andando por las rampas y llévate la mejor vista de la ciudad.</p>
+              <a class="cta-link" href="https://maps.google.com/?q=Catedral+de+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+            </div>
+          </li>
+
+          <li class="place-card place-card--reverse">
+            <div class="place-media">
+              <img
+                src="assets/photos/alcazar.jpg"
+                alt="Reales Alcazares de Sevilla"
+                style="--focus: 50% 50%; --zoom: 1; --ar: 4 / 3; --fit: cover;"
+              />
+            </div>
+            <div class="place-body">
+              <span class="place-index">02</span>
+              <h3 data-i18n="visit_2_title">El Alcázar</h3>
+              <p data-i18n="visit_2_desc">Un palacio real de mil vidas. Patios mudéjares, salones nazaríes y jardines con naranjos y pavos reales donde se rodó hasta Juego de Tronos.</p>
+              <a class="cta-link" href="https://maps.google.com/?q=Real+Alc%C3%A1zar+de+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+            </div>
+          </li>
+
+          <li class="place-card">
+            <div class="place-media">
+              <img
+                src="assets/photos/plaza.jpg"
+                alt="Plaza de España de Sevilla"
+                style="--focus: 50% 50%; --zoom: 1; --ar: 4 / 3; --fit: cover;"
+              />
+            </div>
+            <div class="place-body">
+              <span class="place-index">03</span>
+              <h3 data-i18n="visit_3_title">La Plaza de España</h3>
+              <p data-i18n="visit_3_desc">Joya de la Exposición Iberoamericana de 1929. Puentes, azulejos y un canal semicircular que se puede recorrer en barca al atardecer.</p>
+              <a class="cta-link" href="https://maps.google.com/?q=Plaza+de+Espa%C3%B1a+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+            </div>
+          </li>
+
+          <li class="place-card place-card--reverse">
+            <div class="place-media">
+              <img
+                src="assets/photos/triana.jpg"
+                alt="Río Guadalquivir y barrio de Triana"
+                style="--focus: 50% 50%; --zoom: 1; --ar: 4 / 3; --fit: cover;"
+              />
+            </div>
+            <div class="place-body">
+              <span class="place-index">04</span>
+              <h3 data-i18n="visit_4_title">Un paseo por el río y Triana</h3>
+              <p data-i18n="visit_4_desc">Cruza el puente de Isabel II y descubre el barrio marinero: cerámica, capillas cofrades y las mejores tapas frente al Guadalquivir.</p>
+              <a class="cta-link" href="https://maps.google.com/?q=Triana+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+            </div>
+          </li>
+
+          <li class="place-card">
+            <div class="place-media">
+              <img
+                src="assets/photos/cruz.jpeg"
+                alt="Barrio de Santa Cruz"
+                style="--focus: 50% 40%; --zoom: 1; --ar: 4 / 3; --fit: cover;"
+              />
+            </div>
+            <div class="place-body">
+              <span class="place-index">05</span>
+              <h3 data-i18n="visit_5_title">El barrio de Santa Cruz</h3>
+              <p data-i18n="visit_5_desc">Antigua judería hecha de callejones, patios encalados y plazas escondidas. Piérdete al atardecer entre naranjos, farolas y el eco de una guitarra flamenca.</p>
+              <a class="cta-link" href="https://maps.google.com/?q=Barrio+Santa+Cruz+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+            </div>
+          </li>
+        </ul>
+
+        <div class="photo-break reveal">
+          <img
+            src="assets/photos/kayak2.jpeg"
+            alt="María y José"
+            style="--focus: 50% 50%; --zoom: 1; --h: clamp(260px, 48vw, 560px); --fit: cover;"
+          />
+        </div>
+
+        <div class="content-section eat-section" id="donde-comer" aria-labelledby="h-comer">
+          <div class="divider" aria-hidden="true"></div>
+          <span class="eyebrow" data-i18n="eat_eyebrow">Dónde comer</span>
+          <h2 id="h-comer" data-i18n="eat_title">Sitios que nos encantan</h2>
+          <div class="prose">
+            <p data-i18n="eat_intro">Para comer bien entre visita y visita. Reserva con antelación, sobre todo en fin de semana.</p>
+          </div>
+          <ul class="eat-list">
+            <li class="eat-item">
+              <span class="eat-index">01</span>
+              <div class="eat-body">
+                <h3>El Rinconcillo</h3>
+                <p data-i18n="eat_1_desc">El bar más antiguo de España. Tapas clásicas, jamón en la barra y ambiente de toda la vida en el centro.</p>
+                <a class="cta-link" href="https://maps.google.com/?q=El+Rinconcillo+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+              </div>
+            </li>
+            <li class="eat-item">
+              <span class="eat-index">02</span>
+              <div class="eat-body">
+                <h3>Bar Donald</h3>
+                <p data-i18n="eat_2_desc">Taberna de barrio con solera, famosa por sus montaditos y su ambiente auténtico y sin pretensiones.</p>
+                <a class="cta-link" href="https://maps.google.com/?q=Bar+Donald+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+              </div>
+            </li>
+            <li class="eat-item">
+              <span class="eat-index">03</span>
+              <div class="eat-body">
+                <h3>Restaurante Las Piletas</h3>
+                <p data-i18n="eat_3_desc">Referente de la cocina tradicional sevillana. Buen sitio para una comida más tranquila con platos clásicos bien hechos.</p>
+                <a class="cta-link" href="https://maps.google.com/?q=Restaurante+Las+Piletas+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+              </div>
+            </li>
+            <li class="eat-item">
+              <span class="eat-index">04</span>
+              <div class="eat-body">
+                <h3>Bar Santa Marta</h3>
+                <p data-i18n="eat_4_desc">Pequeño bar de tapas muy querido en el centro. Carta sencilla, buen producto y mucho ambiente de taberna.</p>
+                <a class="cta-link" href="https://maps.google.com/?q=Bar+Santa+Marta+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+              </div>
+            </li>
+            <li class="eat-item">
+              <span class="eat-index">05</span>
+              <div class="eat-body">
+                <h3>Taberna Zurbarán</h3>
+                <p data-i18n="eat_5_desc">Taberna con encanto en pleno centro. Tapas caseras, buena carta de vinos y un rincón perfecto para parar a comer.</p>
+                <a class="cta-link" href="https://maps.google.com/?q=Taberna+Zurbar%C3%A1n+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+              </div>
+            </li>
+            <li class="eat-item">
+              <span class="eat-index">06</span>
+              <div class="eat-body">
+                <h3>Taberna Peregil</h3>
+                <p data-i18n="eat_6_desc">Un clásico del barrio de Santa Cruz. Cola casi asegurada, pero merece la pena por sus tapas y su bullicio sevillano.</p>
+                <a class="cta-link" href="https://maps.app.goo.gl/tSSZyvvcEXsksSpDA" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+              </div>
+            </li>
+            <li class="eat-item">
+              <span class="eat-index">07</span>
+              <div class="eat-body">
+                <h3>Bodeguita Antonio Romero</h3>
+                <p data-i18n="eat_7_desc">Conocida sobre todo sus montaditos. Local con mucha personalidad y ambiente de bar de toda la vida.</p>
+                <a class="cta-link" href="https://maps.google.com/?q=Bodeguita+Antonio+Romero+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+              </div>
+            </li>
+            <li class="eat-item">
+              <span class="eat-index">08</span>
+              <div class="eat-body">
+                <h3>Bodeguita Casablanca</h3>
+                <p data-i18n="eat_8_desc">Taberna tradicional muy cerca de la catedral. Tapas clásicas en un local con solera.</p>
+                <a class="cta-link" href="https://maps.google.com/?q=Bodeguita+Casablanca+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer reveal">
+      <div class="footer-names">María &amp; José</div>
+      <p class="footer-date">24 &middot; 10 &middot; 2026 &middot; Sevilla</p>
+      <p class="footer-thanks" data-i18n="footer_thanks">Gracias por acompañarnos en este capítulo.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

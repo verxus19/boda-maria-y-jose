@@ -801,6 +801,17 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   color: var(--ink-soft); margin-bottom: 1.2rem;
 }
 .footer-thanks { font-size: 0.86rem; color: var(--ink-soft); }
+.footer-contact {
+  margin-top: 1.6rem;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+.footer-contact a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 /* ===================================================
    RESPONSIVE

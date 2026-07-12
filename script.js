@@ -192,6 +192,9 @@ const translations = {
     eat_7_desc:        "Conocida sobre todo por sus montaditos. Local con mucha personalidad y ambiente de bar de toda la vida.",
     eat_8_desc:        "Taberna tradicional muy cerca de la catedral. Tapas cl\u00e1sicas en un local con solera.",
     footer_thanks:     "Gracias por acompa\u00f1arnos en este cap\u00edtulo.",
+    footer_contact_intro: "Si ten\u00e9is cualquier duda, no dud\u00e9is en contactarnos directamente.",
+    footer_contact_maria: "Mar\u00eda: <a href=\"tel:+34633223156\">+34 633 223 156</a>",
+    footer_contact_jose:  "Jos\u00e9 Mar\u00eda: <a href=\"tel:+34673534166\">+34 673 534 166</a>",
   },
   en: {
     meta_title:        "Mar\u00eda & Jos\u00e9 | October 24, 2026",
@@ -240,7 +243,7 @@ const translations = {
     dress_eyebrow:     "Dress code",
     dress_title:       "Elegant, comfortable, and ready to celebrate",
     dress_intro:       "We would love to see you looking your best for a special night. Think elegant afternoon-evening attire and shoes you can dance in.",
-    dress_pill_1:      "Suit or blazer.",
+    dress_pill_1:      "Suit.",
     dress_pill_2:      "Long dress.",
     dress_pill_3:      "Comfortable shoes to give it your all.",
     rsvp_eyebrow:      "RSVP",
@@ -298,6 +301,9 @@ const translations = {
     eat_7_desc:        "Best known for its montaditos. A place full of character with a proper old-school bar feel.",
     eat_8_desc:        "A traditional tavern very close to the cathedral. Classic tapas in a venue with real history.",
     footer_thanks:     "Thank you for being part of this chapter.",
+    footer_contact_intro: "If you have any questions, please feel free to contact us directly.",
+    footer_contact_maria: "Mar\u00eda: <a href=\"tel:+34633223156\">+34 633 223 156</a>",
+    footer_contact_jose:  "Jos\u00e9 Mar\u00eda: <a href=\"tel:+34673534166\">+34 673 534 166</a>",
   },
 };
 

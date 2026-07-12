@@ -870,17 +870,19 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   .hero--split .hero-media {
     position: relative;
     inset: auto;
-    height: min(58vh, 480px);
-    min-height: 260px;
+    height: min(68vh, 560px);
+    min-height: 320px;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-  }
-  .hero--split .hero-media__half--right {
-    display: none;
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
   }
   .hero--split .hero-media__half--left {
     background-size: cover;
-    background-position: 50% 20%;
+    background-position: 50% 22%;
+  }
+  .hero--split .hero-media__half--right {
+    background-size: cover;
+    background-position: 50% 55%;
   }
   .hero--split .hero-overlay {
     display: none;

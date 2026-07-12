@@ -48,6 +48,40 @@ function onScroll() {
 
 window.addEventListener("scroll", onScroll, { passive: true });
 
+// ── MOBILE NAV ────────────────────────────────────────────────
+const navToggle = document.getElementById("navToggle");
+const pageNav   = document.getElementById("pageNav");
+
+function setNavOpen(open) {
+  if (!navToggle || !pageNav) return;
+  navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  navToggle.setAttribute(
+    "aria-label",
+    open
+      ? (document.documentElement.lang === "en" ? "Close navigation menu" : "Cerrar menú de navegación")
+      : (document.documentElement.lang === "en" ? "Open navigation menu" : "Abrir menú de navegación")
+  );
+  document.body.classList.toggle("nav-open", open);
+}
+
+if (navToggle && pageNav) {
+  navToggle.addEventListener("click", () => {
+    setNavOpen(navToggle.getAttribute("aria-expanded") !== "true");
+  });
+
+  pageNav.querySelectorAll(".page-nav__link").forEach((link) => {
+    link.addEventListener("click", () => setNavOpen(false));
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setNavOpen(false);
+  });
+
+  window.matchMedia("(min-width: 761px)").addEventListener("change", (e) => {
+    if (e.matches) setNavOpen(false);
+  });
+}
+
 // ── TRANSLATIONS ──────────────────────────────────────────────
 const langToggle = document.getElementById("langToggle");
 const i18nNodes  = Array.from(document.querySelectorAll("[data-i18n]"));
@@ -299,6 +333,18 @@ function applyLanguage(lang) {
 
   if (bgMusic) {
     setMusicPlaying(!bgMusic.paused);
+  }
+
+  if (navToggle && navToggle.getAttribute("aria-expanded") === "true") {
+    navToggle.setAttribute(
+      "aria-label",
+      selected === "en" ? "Close navigation menu" : "Cerrar menú de navegación"
+    );
+  } else if (navToggle) {
+    navToggle.setAttribute(
+      "aria-label",
+      selected === "en" ? "Open navigation menu" : "Abrir menú de navegación"
+    );
   }
 
   try { localStorage.setItem("boda_lang", selected); } catch (_) {}

@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>María &amp; José | 24 Octubre 2026</title>
     <meta name="description" content="Invitación digital de boda. Sevilla, 24 de octubre de 2026." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,19 @@
     <div class="progress-line" id="progressLine" aria-hidden="true"></div>
 
     <header class="site-header" id="siteHeader">
-      <nav class="page-nav" aria-label="Secciones principales">
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="pageNav"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+      <nav class="page-nav" id="pageNav" aria-label="Secciones principales">
         <a class="page-nav__link" href="#inicio" data-i18n="nav_inicio">Inicio</a>
         <a class="page-nav__link" href="#itinerario" data-i18n="nav_plan">Itinerario</a>
         <a class="page-nav__link" href="#preboda" data-i18n="nav_preboda">Preboda</a>

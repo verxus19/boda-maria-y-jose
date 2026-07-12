@@ -84,7 +84,6 @@ if (navToggle && pageNav) {
 
 // ── TRANSLATIONS ──────────────────────────────────────────────
 const langToggle = document.getElementById("langToggle");
-const i18nNodes  = Array.from(document.querySelectorAll("[data-i18n]"));
 
 const translations = {
   es: {
@@ -134,7 +133,7 @@ const translations = {
     dress_eyebrow:     "Etiqueta",
     dress_title:       "Elegante, c\u00f3modo y con ganas de celebrar",
     dress_intro:       "Nos encantar\u00e1 veros guap\u00edsimos para una noche especial. Pensad en un look elegante de tarde-noche y en un calzado con el que pod\u00e1is bailar.",
-    dress_pill_1:      "Traje o chaqué.",
+    dress_pill_1:      "Traje.",
     dress_pill_2:      "Vestido largo.",
     dress_pill_3:      "Calzado c\u00f3modo para darlo todo.",
     rsvp_eyebrow:      "Asistencia",
@@ -311,7 +310,7 @@ function applyLanguage(lang) {
   const selected = translations[lang] ? lang : "es";
   document.documentElement.lang = selected;
 
-  i18nNodes.forEach((node) => {
+  document.querySelectorAll("[data-i18n]").forEach((node) => {
     const text = translations[selected][node.dataset.i18n];
     if (text === undefined) return;
     if (node.hasAttribute("data-i18n-html")) {

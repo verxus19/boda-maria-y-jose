@@ -733,6 +733,19 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   margin-top: 1.35rem;
 }
 
+/* Foto intercalada en timeline: solo visible en móvil */
+.plan-inline-photo {
+  display: none;
+  list-style: none;
+}
+.plan-inline-photo img {
+  display: block;
+  width: min(100%, 420px);
+  margin: 0 auto;
+  height: auto;
+  object-fit: contain;
+}
+
 /* ===================================================
    PILL LIST
    =================================================== */
@@ -870,15 +883,14 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   .hero--split .hero-media {
     position: relative;
     inset: auto;
-    height: min(68vh, 560px);
-    min-height: 320px;
+    height: min(58vh, 480px);
+    min-height: 280px;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 2px;
+    grid-template-rows: 1fr;
+    gap: 0;
   }
   .hero--split .hero-media__half--left {
-    background-size: cover;
-    background-position: 50% 22%;
+    display: none;
   }
   .hero--split .hero-media__half--right {
     background-size: cover;
@@ -938,7 +950,7 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   .content-section h2 { font-size: clamp(2rem, 8vw, 2.8rem); margin-bottom: 1.4rem; }
   .prose { font-size: 0.95rem; line-height: 1.78; }
 
-  /* Split sections: foto arriba, texto abajo */
+  /* Split sections: texto arriba, foto abajo */
   .content-section.split {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -949,6 +961,8 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
     gap: 1.8rem;
     align-items: stretch;
   }
+  .split-body { order: 1; }
+  .split-media { order: 2; }
   .split-media,
   .split-body {
     flex: none;
@@ -1009,6 +1023,13 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
     margin: 0 auto;
   }
   .plan-row + .plan-row .plan-photo img { margin-top: 0; }
+  .plan-photo--salvador-side { display: none; }
+  .plan-photo--cortijo-side { display: none; }
+  .plan-inline-photo {
+    display: block;
+    padding: 0.6rem 0 1.4rem;
+    border-bottom: 1px solid var(--line);
+  }
 
   /* Gallery 2 columns */
   .gallery-grid {
@@ -1025,7 +1046,9 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
-  .place-card--reverse .place-media { order: 0; }
+  .place-body { order: 1; }
+  .place-media { order: 2; }
+  .place-card--reverse .place-media { order: 2; }
   .place-body h3 { font-size: clamp(1.5rem, 5.5vw, 1.9rem); }
 
   /* Eat list */
@@ -1058,21 +1081,20 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   .gifts-iban { font-size: 0.82rem; letter-spacing: 0.04em; }
 }
 
-/* Landscape phones: foto + texto apilados pero más compactos */
+/* Landscape phones: misma foto única (pedida-fuera) */
 @media (max-width: 760px) and (orientation: landscape) {
   .hero--split .hero-media {
     height: min(72vh, 100%);
     min-height: 0;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
-  .hero--split .hero-media__half--right {
-    display: block;
-    background-size: cover;
-    background-position: 50% 45%;
-  }
   .hero--split .hero-media__half--left {
-    background-position: 50% 22%;
+    display: none;
+  }
+  .hero--split .hero-media__half--right {
+    background-size: cover;
+    background-position: 50% 55%;
   }
   .hero--split .hero-content {
     padding: 1.25rem 1.5rem 1.5rem;

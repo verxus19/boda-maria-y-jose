@@ -31,24 +31,6 @@
         <span class="nav-toggle__bar" aria-hidden="true"></span>
         <span class="nav-toggle__bar" aria-hidden="true"></span>
       </button>
-      <div class="header-actions">
-        <button
-          class="music-toggle"
-          id="musicToggle"
-          type="button"
-          aria-pressed="false"
-          aria-label="Reproducir La mujer de verde, de Izal"
-          title="La mujer de verde · Izal"
-        >
-          <span class="music-toggle__icon music-toggle__icon--play" aria-hidden="true">♪</span>
-          <span class="music-toggle__icon music-toggle__icon--pause" aria-hidden="true">❚❚</span>
-        </button>
-        <div class="lang-switch" id="langToggle" data-lang="es" role="group" aria-label="Selector de idioma">
-          <span class="lang-slider" aria-hidden="true"></span>
-          <button class="lang-opt" data-lang="es" aria-pressed="true"><img src="https://flagcdn.com/es.svg" alt="Español" width="22" height="16"></button>
-          <button class="lang-opt" data-lang="en" aria-pressed="false"><img src="https://flagcdn.com/gb.svg" alt="English" width="22" height="16"></button>
-        </div>
-      </div>
     </header>
 
     <nav class="page-nav" id="pageNav" aria-label="Secciones principales">
@@ -63,6 +45,25 @@
       <a class="page-nav__link" href="#sevilla" data-i18n="nav_sevilla">Qué visitar</a>
       <a class="page-nav__link" href="#donde-comer" data-i18n="nav_comer">Dónde comer</a>
     </nav>
+
+    <div class="header-actions">
+      <button
+        class="music-toggle"
+        id="musicToggle"
+        type="button"
+        aria-pressed="false"
+        aria-label="Reproducir La mujer de verde, de Izal"
+        title="La mujer de verde · Izal"
+      >
+        <span class="music-toggle__icon music-toggle__icon--play" aria-hidden="true">♪</span>
+        <span class="music-toggle__icon music-toggle__icon--pause" aria-hidden="true">❚❚</span>
+      </button>
+      <div class="lang-switch" id="langToggle" data-lang="es" role="group" aria-label="Selector de idioma">
+        <span class="lang-slider" aria-hidden="true"></span>
+        <button class="lang-opt" data-lang="es" aria-pressed="true"><img src="https://flagcdn.com/es.svg" alt="Español" width="22" height="16"></button>
+        <button class="lang-opt" data-lang="en" aria-pressed="false"><img src="https://flagcdn.com/gb.svg" alt="English" width="22" height="16"></button>
+      </div>
+    </div>
     </div>
 
     <audio id="bgMusic" loop preload="auto" autoplay playsinline aria-label="La mujer de verde, de Izal">
@@ -166,6 +167,12 @@
                     <a class="cta-link" href="https://maps.google.com/?q=Iglesia+del+Salvador+Sevilla" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
                   </article>
                 </li>
+                <li class="plan-inline-photo">
+                  <img
+                    src="assets/photos/salvador.png"
+                    alt="Iglesia del Salvador, Sevilla"
+                  />
+                </li>
                 <li class="timeline-item">
                   <time datetime="19:30">19:30h</time>
                   <article>
@@ -175,7 +182,7 @@
                   </article>
                 </li>
               </ol>
-              <div class="plan-photo">
+              <div class="plan-photo plan-photo--salvador-side">
                 <img
                   src="assets/photos/salvador.png"
                   alt="Iglesia del Salvador, Sevilla"
@@ -193,6 +200,12 @@
                     <a class="cta-link" href="https://maps.google.com/?q=Cortijo+El+Esparragal+Gerena" target="_blank" rel="noreferrer noopener" data-i18n="plan_map_link">Ver mapa</a>
                   </article>
                 </li>
+                <li class="plan-inline-photo">
+                  <img
+                    src="assets/photos/cortijo.png"
+                    alt="Cortijo El Esparragal, Gerena"
+                  />
+                </li>
                 <li class="timeline-item">
                   <time datetime="02:00">02:00h</time>
                   <article>
@@ -208,7 +221,7 @@
                   </article>
                 </li>
               </ol>
-              <div class="plan-photo">
+              <div class="plan-photo plan-photo--cortijo-side">
                 <img
                   src="assets/photos/cortijo.png"
                   alt="Cortijo El Esparragal, Gerena"
